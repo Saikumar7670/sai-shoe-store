@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>History</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap\bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand bg-danger navbar-dark text-uppercase sticky-top justify-content-between">
+	<h2 class="text-white">Shoe Store</h2>
+	<ul class="navbar-nav">
+		<li class="nav-item">
+			<a href="index.html" class="nav-link">Home</a>
+		</li>
+		<li class="nav-item">
+			<a href="products.html" class="nav-link">Products</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link active">History</a>
+		</li>
+	</ul>
+</nav>
+<div class="table-responsive">
+	<table class="container table border table-hover table-striped mt-4" style="background-color: #cecccc">
+		<thead class="thead-dark">
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>City</th>
+				<th>Address</th>
+				<th>Contact No.</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody id="datael">
+			
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
+
+<script>
+	let myData=JSON.parse(localStorage.getItem('user'));
+	let datael=document.getElementById("datael");
+	datael.innerHTML=`
+				<tr>
+				<td>${myData.name}</td>
+				<td>${myData.email}</td>
+				<td>${myData.city}</td>
+				<td>${myData.address}</td>
+				<td>${myData.phone}</td>
+				<td>${myData.cdata}</td>
+			</tr>
+			`
+
+</script>
